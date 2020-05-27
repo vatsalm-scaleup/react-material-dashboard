@@ -8,7 +8,12 @@ import { AppBar, Toolbar } from '@material-ui/core';
 const useStyles = makeStyles(() => ({
   root: {
     boxShadow: 'none'
-  }
+  },
+  logo:{
+    color: '#FFFFFF',
+    fontSize: '22px',
+    fontWeight: 'bold'
+  },
 }));
 
 const Topbar = props => {
@@ -25,10 +30,9 @@ const Topbar = props => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <img
-            alt="Logo"
-            src="/images/logos/logo--white.svg"
-          />
+          <div className={classes.logo}>
+            <span>StaySigned</span>
+          </div>
         </RouterLink>
       </Toolbar>
     </AppBar>

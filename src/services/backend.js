@@ -70,4 +70,9 @@ export default class BackendService {
       })
       .then()
   }
+
+  logout(){
+    return this.auth
+      .signOut()
+  }
 }

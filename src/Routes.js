@@ -14,7 +14,8 @@ import {
   Settings as SettingsView,
   SignUp as SignUpView,
   SignIn as SignInView,
-  NotFound as NotFoundView
+  NotFound as NotFoundView,
+  Home as HomeView
 } from './views';
 
 const Routes = () => {
@@ -23,7 +24,7 @@ const Routes = () => {
       <Redirect
         exact
         from="/"
-        to="/dashboard"
+        to="/home"
       />
       <RouteWithLayout
         component={DashboardView}
@@ -78,6 +79,12 @@ const Routes = () => {
         exact
         layout={MinimalLayout}
         path="/sign-in"
+      />
+      <RouteWithLayout
+        component={HomeView}
+        exact
+        layout={MinimalLayout}
+        path="/home"
       />
       <RouteWithLayout
         component={NotFoundView}

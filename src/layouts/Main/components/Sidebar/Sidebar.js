@@ -47,12 +47,7 @@ const Sidebar = props => {
       title: 'Dashboard',
       href: '/dashboard',
       icon: <DashboardIcon />
-    },
-    {
-      title: 'Candidates',
-      href: '/users',
-      icon: <PeopleIcon />
-    },
+    }
   ];
 
   return (
