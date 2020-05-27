@@ -45,9 +45,9 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const statusColors = {
-  delivered: 'success',
+  active: 'success',
   pending: 'info',
-  refunded: 'danger'
+  refused: 'danger'
 };
 
 const LatestOrders = props => {
@@ -63,16 +63,7 @@ const LatestOrders = props => {
       className={clsx(classes.root, className)}
     >
       <CardHeader
-        action={
-          <Button
-            color="primary"
-            size="small"
-            variant="outlined"
-          >
-            New entry
-          </Button>
-        }
-        title="Latest Orders"
+        title="Recent Searches"
       />
       <Divider />
       <CardContent className={classes.content}>
@@ -81,8 +72,8 @@ const LatestOrders = props => {
             <Table>
               <TableHead>
                 <TableRow>
-                  <TableCell>Order Ref</TableCell>
-                  <TableCell>Customer</TableCell>
+                  <TableCell>PAN</TableCell>
+                  <TableCell>Location</TableCell>
                   <TableCell sortDirection="desc">
                     <Tooltip
                       enterDelay={300}
