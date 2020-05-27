@@ -12,6 +12,8 @@ import {
   Typography
 } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import API from '../../services/backend';
+
 
 import { Facebook as FacebookIcon, Google as GoogleIcon } from 'icons';
 
@@ -172,7 +174,8 @@ const SignIn = props => {
 
   const handleSignIn = event => {
     event.preventDefault();
-    history.push('/');
+    new API().authenticate(formState.values)
+      .then(() => history.push('/'))
   };
 
   const hasError = field =>

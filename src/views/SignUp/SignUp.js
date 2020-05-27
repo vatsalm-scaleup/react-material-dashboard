@@ -14,15 +14,11 @@ import {
   Typography
 } from '@material-ui/core';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import API from '../../services/backend';
+
 
 const schema = {
-  firstName: {
-    presence: { allowEmpty: false, message: 'is required' },
-    length: {
-      maximum: 32
-    }
-  },
-  lastName: {
+  companyName: {
     presence: { allowEmpty: false, message: 'is required' },
     length: {
       maximum: 32
@@ -187,7 +183,8 @@ const SignUp = props => {
 
   const handleSignUp = event => {
     event.preventDefault();
-    history.push('/');
+    new API().createAuth(formState.values)
+    history.push('/sign-in');
   };
 
   const hasError = field =>
@@ -261,30 +258,16 @@ const SignUp = props => {
                 </Typography>
                 <TextField
                   className={classes.textField}
-                  error={hasError('firstName')}
+                  error={hasError('companyName')}
                   fullWidth
                   helperText={
-                    hasError('firstName') ? formState.errors.firstName[0] : null
+                    hasError('companyName') ? formState.errors.companyName[0] : null
                   }
-                  label="First name"
-                  name="firstName"
+                  label="Company name"
+                  name="companyName"
                   onChange={handleChange}
                   type="text"
-                  value={formState.values.firstName || ''}
-                  variant="outlined"
-                />
-                <TextField
-                  className={classes.textField}
-                  error={hasError('lastName')}
-                  fullWidth
-                  helperText={
-                    hasError('lastName') ? formState.errors.lastName[0] : null
-                  }
-                  label="Last name"
-                  name="lastName"
-                  onChange={handleChange}
-                  type="text"
-                  value={formState.values.lastName || ''}
+                  value={formState.values.companyName || ''}
                   variant="outlined"
                 />
                 <TextField
