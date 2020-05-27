@@ -9,6 +9,11 @@ import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
 
 const useStyles = makeStyles(theme => ({
+  logo:{
+    color: '#FFFFFF',
+    fontSize: '22px',
+    fontWeight: 'bold'
+  },
   root: {
     boxShadow: 'none'
   },
@@ -34,10 +39,9 @@ const Topbar = props => {
     >
       <Toolbar>
         <RouterLink to="/">
-          <img
-            alt="Logo"
-            src="/images/logos/logo--white.svg"
-          />
+          <div className={classes.logo}>
+            <span>StaySigned</span>
+          </div>
         </RouterLink>
         <div className={classes.flexGrow} />
         <Hidden mdDown>
